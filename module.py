@@ -1,5 +1,7 @@
 #! /usr/bin/python3
 
+# module(main)  
+# render_apps() -> format_entry() -> make_title() -> get_prefix() + format_title
 import os
 import asyncio
 import getpass
@@ -105,7 +107,7 @@ def format_title(app):
     name = app.name
 
     #title = FORMATERS[klass](name) if klass in FORMATERS else name
-    title = klass
+    title = klass.capitalize()
 
     if len(title) > MAX_LENGTH:
         title = title[:MAX_LENGTH - 3] + '...'
