@@ -104,7 +104,8 @@ def format_title(app):
     klass = app.window_class
     name = app.name
 
-    title = FORMATERS[klass](name) if klass in FORMATERS else name
+    #title = FORMATERS[klass](name) if klass in FORMATERS else name
+    title = klass
 
     if len(title) > MAX_LENGTH:
         title = title[:MAX_LENGTH - 3] + '...'
