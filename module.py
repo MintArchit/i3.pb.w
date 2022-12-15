@@ -1,7 +1,12 @@
 #! /usr/bin/python3
 
 # module(main)  
-# render_apps() -> format_entry() -> make_title() -> get_prefix() + format_title
+#render_apps() -> format_entry() -> make_title() -> get_prefix() + format_title()
+# get_prefix() -> icon_resolver.resolve()
+
+# lemonbar formatting
+# https://github.com/polybar/polybar/wiki/Formatting#format-tags
+
 import os
 import asyncio
 import getpass
