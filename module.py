@@ -82,18 +82,25 @@ def render_apps(i3):
 
 def format_entry(app):
     title = make_title(app)
-    u_color = '#b4619a' if app.focused else\
-        '#e84f4f' if app.urgent else\
-        '#404040'
-    return '%%{u%s}%%{+u}%s%%{u-}%%{-u}' % (u_color, title) 
+    # u_color = '#ffb52a' if app.focused else\
+        # '#e84f4f' if app.urgent else\
+        # '#404040'
+    # return '%%{u%s}%%{+u}%s%%{u-}%%{-u}' % (u_color, title)
+    if app.focused:
+        u_color = '#ffb52a'
+        return '%%{u%s}%%{+u}%s%%{u-}%%{-u}' % (u_color, title)
+    else:
+        return title
 
 
 def make_title(app):
-    out = get_prefix(app) + format_title(app)
+    out = ' ' + get_prefix(app) + format_title(app) + ' '
 
     if app.focused:
-        out = '%{F#f80}' + out + '%{F-}'
-        # out = '%{F#fff}' + out + '%{F'
+        out = '%{B#444}' + out + '%{B}'
+    elif app.urgent:
+        out = '%{B#e84f4f}' + out + '%{B}'
+
 
     return '%%{A1:%s %s:}%s%%{A}' % (COMMAND_PATH, app.id, out)
 
@@ -112,7 +119,7 @@ def format_title(app):
     name = app.name
 
     #title = FORMATERS[klass](name) if klass in FORMATERS else name
-    title = klass.capitalize()
+    title = " " + klass.capitalize()
 
     if len(title) > MAX_LENGTH:
         title = title[:MAX_LENGTH - 3] + '...'
