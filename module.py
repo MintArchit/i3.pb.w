@@ -96,7 +96,7 @@ def make_title(app):
         out = '%{F#f80}' + out + '%{F-}'
         # out = '%{F#fff}' + out + '%{F'
 
-    return '%%{A1:%s %s:}%s%%{A-}' % (COMMAND_PATH, app.id, out)
+    return '%%{A1:%s %s:}%s%%{A}' % (COMMAND_PATH, app.id, out)
 
 
 def get_prefix(app):
