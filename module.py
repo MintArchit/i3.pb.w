@@ -93,7 +93,8 @@ def make_title(app):
     out = get_prefix(app) + format_title(app)
 
     if app.focused:
-        out = '%{F#fff}' + out + '%{F-}'
+        out = '%{F#f80}' + out + '%{F-}'
+        # out = '%{F#fff}' + out + '%{F'
 
     return '%%{A1:%s %s:}%s%%{A-}' % (COMMAND_PATH, app.id, out)
 
