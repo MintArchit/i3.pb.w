@@ -85,8 +85,7 @@ def format_entry(app):
     u_color = '#b4619a' if app.focused else\
         '#e84f4f' if app.urgent else\
         '#404040'
-
-    return '%%{u%s} %s %%{u-}' % (u_color, title)
+    return '%%{u%s}%%{+u}%s%%{u-}%%{-u}' % (u_color, title) 
 
 
 def make_title(app):
