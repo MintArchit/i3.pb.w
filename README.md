@@ -1,4 +1,4 @@
-# Polybar i3 windows script
+# i3pbw
 
 Miss windows-like list of all windows in your taskbar?
 
