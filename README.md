@@ -8,15 +8,14 @@ Miss windows-like list of all windows in your taskbar?
 
 * Focus workspace and window on left mouse button click
 * Highlight urgent windows
-* Remove unnecessary text from window titles like " - Chromium" for chromium windows to make them shorter
 * Overflow the polybar when there is too many windows open :^)
 
 ## Example config
 
 ```ini
-[module/i3-windows]
+[module/i3pbw]
 type = custom/script
-exec = ~/projects/polybar-i3-windows/module.py
+exec = ~/ghub/i3pbw/module.py
 tail = true
 ```
 
